@@ -1,0 +1,32 @@
+#This file shows example commands to use for running sdp_addition_on_occ.yml playbook which defines/configures SDPs mentioned in line_entries.yml file
+
+#Playbook params
+#input          -> the list of OCCconfigurations to update
+#ICP            -> the ICP level for the OCCs which we will update (it has to be the same for all OCCs in the OCCsGroup param)
+#OCCsGroup      -> the OCCs which we will run on
+
+#Run one configuration on one OCC
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC100]}'
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [4_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC99]}'
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [7_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC80]}'
+
+#Run multiple configurations on one OCC
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371, 4_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC100]}'
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [4_19089-CXC_1730371, 7_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC99]}'
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371, 4_19089-CXC_1730371, 7_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC80]}'
+
+#Run one configuration on multiple OCCs
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC100, OCC101]}'
+
+#Run multiple configurations on multiple OCCs
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371, 4_19089-CXC_1730371, 7_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': [OCC100, OCC101]}'
+
+#Run one configuration on One Group
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': FNIOCC}'
+
+#Run multiple configurations on One Group
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371, 4_19089-CXC_1730371, 7_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': FNIOCC}'
+
+#Run multiple configurations on all Groups/ all hosts mentioned in hosts file in this directory
+#Caution
+ansible-playbook sdp_addition_on_occ.yml --extra-vars '{'input': [1_19089-CXC_1730371, 4_19089-CXC_1730371, 7_19089-CXC_1730371], 'ICP': CXP_902_0588_R18E, 'OCCsGroup': all}'
