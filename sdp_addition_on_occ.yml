@@ -1,0 +1,105 @@
+- name: Add SDP/s on OCCs
+  hosts: "{{ OCCsGroup }}"
+  
+  vars_files:
+    - line_entries.yml
+  
+  tasks:
+      
+  - name: log into OCC cli
+    command: /opt/occ/{{ ICP }}/bin/OnlineControl start CLI -u {{ user }} -p {{ password }} -m localhost -c "ln"
+    become: yes
+    become_user: ogw
+    register: started_versions
+    
+  - name: extract configurations & versions
+    set_fact:
+      configurations: "{{ configurations|default([]) + [ {'conf': item[1], 'version': item[0]|regex_search(item[1]|string + '/(.+)\\t', '\\1') | first}] }}"
+    with_nested:
+    - "{{ started_versions.stdout_lines }}"
+    - "{{ input }}"
+    when: "item[1] in item[0]"  
+      
+  - name: set timestamp
+    set_fact:
+      timestamp: "{{ ansible_date_time.iso8601_basic_short }}"
+      
+  - name: export required cfg files
+    shell: /opt/occ/{{ ICP }}/bin/OnlineControl start CLI -u {{ user }} -p {{ password }} -m localhost -c "ep /home/ogw/{{ item.conf }}_export_{{ timestamp }}.txt {{ item.conf }} {{ item.version }}"
+    become: yes
+    become_user: ogw
+    with_list: "{{ configurations }}"
+    register: export_res
+    failed_when: "'exported successfully' not in export_res.stdout"
+    
+  # remeber to consider errors separately in different configurations
+
+  # - name: add configuration lines
+  #   lineinfile:
+  #     path: "/home/ogw/{{ item.conf }}_export_{{ timestamp }}.txt"
+  #     line: "{{ line_entries[item.conf] }}" #we can add filters here
+  #   with_list: "{{ configurations }}"
+  #   become: yes
+  #   become_user: ogw
+  
+  - name: read configurations file
+    shell: cat /home/ogw/{{ item.conf }}_export_{{ timestamp }}.txt
+    with_list: "{{ configurations }}"
+    register: conf_file
+    become: yes
+    become_user: ogw
+
+  - debug:
+      var: conf_file
+    
+  - name: add configuration lines and remove additional spaces
+    lineinfile:
+      dest: "/home/ogw/{{ item[0].conf }}_export_{{ timestamp }}_change.txt"
+      line: "{{ item[1].stdout_lines | add_config(item[0].conf, line_entries[item[0].conf]) | remove_spaces }}"
+      create: true
+    with_together: 
+    - "{{ configurations }}"
+    - "{{ conf_file.results }}"
+    become: yes
+    become_user: ogw
+
+  - name: get revision number
+    shell: /opt/occ/{{ ICP }}/bin/OnlineControl start CLI -u {{ user }} -p {{ password }} -m localhost -c "lr {{ item.conf }}"
+    become: yes
+    become_user: ogw
+    with_list: "{{ configurations }}"
+    register: config_number_res
+
+  - name: set configuration number
+    set_fact:
+      new_conf_number: "{{ new_conf_number|default([]) + [ {'Node': inventory_hostname, 'conf': item.item.conf, 'version': item.stdout_lines|get_new_conf_num} ] }}"
+    with_list: "{{ config_number_res.results }}"
+    
+  - name: import required cfg files
+    shell: /opt/occ/{{ ICP }}/bin/OnlineControl start CLI -u {{ user }} -p {{ password }} -m localhost -c "ui {{ item.conf }} /home/ogw/{{ item.conf }}_export_{{ timestamp }}_change.txt"
+    become: yes
+    become_user: ogw
+    with_list: "{{ configurations }}"
+    register: import_res
+    failed_when: "'Import of user data finished successfully!' not in import_res.stdout"
+
+#  - name: save imported versions
+
+- name: log data
+  hosts: localhost
+  vars:
+    summary: []
+
+  tasks:
+  - name: create import summary
+    set_fact: 
+      summary: "{{ summary + [ hostvars[item].new_conf_number ] }}"
+    when: 
+      - hostvars[item].new_conf_number is defined
+    with_items: "{{ OCCsGroup | get_hosts(groups) }}"
+    
+  - name: write log for each host
+    lineinfile:
+      dest: "/root/Acceptance_Automation/OCC/import_log.json"
+      line: "{{ summary | to_nice_json }}"
+      create: true
