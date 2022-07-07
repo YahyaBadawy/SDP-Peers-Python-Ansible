@@ -1,0 +1,208 @@
+{
+    "line_entries": {
+        "1_19089-CXC_1730371": [
+            [
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP99V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP99V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+            ],
+            [
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP100V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP100V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+            ],
+            [
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP101V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP101V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+            ],
+            [
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP102V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP102V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+            ],
+            [
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP103V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP103V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+            ],
+            [
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP104V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                "Diameter Front-End.Definition of Peers.Applications=matrix:{IN# HQSDP104V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+            ]
+        ],
+        "4_19089-CXC_1730371": [
+            {
+                "application": [
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP99V.Vodafone.com# 193# Authentication# 16777232# *# CIP_IP}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP99V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP99V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+                ],
+                "peers": [
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP99A.Vodafone.com,10.30.161.4,10.30.161.36# 3868# SCTP# true# # Static# Disconnected# true}",
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP99B.Vodafone.com,10.30.161.5,10.30.161.37# 3868# SCTP# true# # Static# Disconnected# true}"
+                ],
+                "roundrobin": [
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP99V.Vodafone.com, 16777232#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP99A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP99B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP99V.Vodafone.com, 16777238#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP99A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP99B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP99V.Vodafone.com, 16777304#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP99A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP99B.Vodafone.com:3868#  }"
+                    ]
+                ]
+            },
+            {
+                "application": [
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP100V.Vodafone.com# 193# Authentication# 16777232# *# CIP_IP}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP100V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP100V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+                ],
+                "peers": [
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP100A.Vodafone.com,10.30.161.6,10.30.161.38# 3868# SCTP# true# # Static# Disconnected# true}",
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP100B.Vodafone.com,10.30.161.7,10.30.161.39# 3868# SCTP# true# # Static# Disconnected# true}"
+                ],
+                "roundrobin": [
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP100V.Vodafone.com, 16777232#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP100A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP100B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP100V.Vodafone.com, 16777238#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP100A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP100B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP100V.Vodafone.com, 16777304#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP100A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP100B.Vodafone.com:3868#  }"
+                    ]
+                ]
+            },
+            {
+                "application": [
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP101V.Vodafone.com# 193# Authentication# 16777232# *# CIP_IP}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP101V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP101V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+                ],
+                "peers": [
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP101A.Vodafone.com,10.30.161.8,10.30.161.40# 3868# SCTP# true# # Static# Disconnected# true}",
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP101B.Vodafone.com,10.30.161.9,10.30.161.41# 3868# SCTP# true# # Static# Disconnected# true}"
+                ],
+                "roundrobin": [
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP101V.Vodafone.com, 16777232#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP101A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP101B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP101V.Vodafone.com, 16777238#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP101A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP101B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP101V.Vodafone.com, 16777304#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP101A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP101B.Vodafone.com:3868#  }"
+                    ]
+                ]
+            },
+            {
+                "application": [
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP102V.Vodafone.com# 193# Authentication# 16777232# *# CIP_IP}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP102V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP102V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+                ],
+                "peers": [
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP102A.Vodafone.com,10.30.161.10,10.30.161.42# 3868# SCTP# true# # Static# Disconnected# true}",
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP102B.Vodafone.com,10.30.161.11,10.30.161.43# 3868# SCTP# true# # Static# Disconnected# true}"
+                ],
+                "roundrobin": [
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP102V.Vodafone.com, 16777232#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP102A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP102B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP102V.Vodafone.com, 16777238#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP102A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP102B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP102V.Vodafone.com, 16777304#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP102A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP102B.Vodafone.com:3868#  }"
+                    ]
+                ]
+            },
+            {
+                "application": [
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP103V.Vodafone.com# 193# Authentication# 16777232# *# CIP_IP}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP103V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP103V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+                ],
+                "peers": [
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP103A.Vodafone.com,10.30.161.12,10.30.161.44# 3868# SCTP# true# # Static# Disconnected# true}",
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP103B.Vodafone.com,10.30.161.13,10.30.161.45# 3868# SCTP# true# # Static# Disconnected# true}"
+                ],
+                "roundrobin": [
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP103V.Vodafone.com, 16777232#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP103A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP103B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP103V.Vodafone.com, 16777238#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP103A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP103B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP103V.Vodafone.com, 16777304#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP103A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP103B.Vodafone.com:3868#  }"
+                    ]
+                ]
+            },
+            {
+                "application": [
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP104V.Vodafone.com# 193# Authentication# 16777232# *# CIP_IP}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP104V.Vodafone.com# 10415# Authentication# 16777238# *# Gx}",
+                    "SDP Diameter Back-End.Definition of Peers.Applications=matrix:{OUT# HQSDP104V.Vodafone.com# 193# Authentication# 16777304# *# ESy}"
+                ],
+                "peers": [
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP104A.Vodafone.com,10.30.161.14,10.30.161.46# 3868# SCTP# true# # Static# Disconnected# true}",
+                    "SDP Diameter Back-End.Definition of Peers.Peers=matrix:{HQSDP104B.Vodafone.com,10.30.161.15,10.30.161.47# 3868# SCTP# true# # Static# Disconnected# true}"
+                ],
+                "roundrobin": [
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP104V.Vodafone.com, 16777232#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP104A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP104B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP104V.Vodafone.com, 16777238#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP104A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP104B.Vodafone.com:3868#  }"
+                    ],
+                    [
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# app# HQSDP104V.Vodafone.com, 16777304#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP104A.Vodafone.com:3868#  }",
+                        "SDP Diameter Back-End.Definition of Peers.Outgoing Request Routing=matrix:{200# ROUNDROBIN# peer# HQSDP104B.Vodafone.com:3868#  }"
+                    ]
+                ]
+            }
+        ],
+        "7_19089-CXC_1730371": [
+            "Parameter Directory.Parameters=matrix:{AF-Response-SDP99.cs.# HQSDP99V.Vodafone.com# String}",
+            "Parameter Directory.Parameters=matrix:{AF-Response-SDP100.cs.# HQSDP100V.Vodafone.com# String}",
+            "Parameter Directory.Parameters=matrix:{AF-Response-SDP101.cs.# HQSDP101V.Vodafone.com# String}",
+            "Parameter Directory.Parameters=matrix:{AF-Response-SDP102.cs.# HQSDP102V.Vodafone.com# String}",
+            "Parameter Directory.Parameters=matrix:{AF-Response-SDP103.cs.# HQSDP103V.Vodafone.com# String}",
+            "Parameter Directory.Parameters=matrix:{AF-Response-SDP104.cs.# HQSDP104V.Vodafone.com# String}"
+        ]
+    }
+}
